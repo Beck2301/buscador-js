@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
@@ -12,17 +12,16 @@
 <body>
 
 <div class="container mt-3">
-  <h2>Filterable Table</h2>
-  <p>Type something in the input field to search the table for first names, 
-  last names or emails:</p>  
+  <h2>Tabla de filtrado</h2>
+  <p>Buscar por Nombre, Apellido o por correo</p>  
   <input class="form-control" id="myInput" type="text" placeholder="Search..">
   <br>
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo</th>
       </tr>
     </thead>
     <tbody id="myTable">
@@ -49,19 +48,9 @@
     </tbody>
   </table>
   
-  <p>Note that we start the search in tbody, to prevent filtering the table headers.</p>
+  <p>Tenga en cuenta que comenzamos la búsqueda en tbody, para evitar filtrar los encabezados de la tabla.</p>
 </div>
 
-<script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
 
 </body>
 </html>
